@@ -1,0 +1,30 @@
+  <div id="scrollform">
+  <form method="post">
+	<fieldset class="well the-fieldset fieldset">
+    <legend class="the-legend">Weather</legend>
+     <div class="form-group ">
+      <label class="control-label " for="select">
+       Select City
+      </label>
+      <select class="select form-control" id="select" name="select" ng-model="city">
+       <option value="Bangalore" selected="selected">
+        Bangalore
+       </option>
+       <option value="Hyderabad">
+        Hyderabad
+       </option>
+       <option value="Chennai">
+        Chennai
+       </option>
+      </select>
+     </div>
+     <div class="form-group">
+      <div>
+       <button class="btn btn-primary " name="submit" type="submit" ng-click="getTemp(2);">
+        Submit
+       </button>
+      </div>
+     </div>
+     </fieldset>
+    </form>
+</div>

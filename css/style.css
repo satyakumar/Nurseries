@@ -1,0 +1,121 @@
+.intro-row {
+    margin-top: 30px;
+}
+
+.card-panel p {
+    font-size: 20px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 30px;
+    color: #666666;
+}
+
+.featured-img {
+    margin-top: 20px;
+}
+
+
+.fb-bg {
+background-color: #3B5998;
+}
+.tw-bg {
+background-color: #55ACEE;
+}
+.gplus-bg {
+background-color: #DD4B39;
+}
+
+footer.page-footer a {
+line-height: 25px;
+}
+
+footer.page-footer a {
+color: #fff;
+font-size: 15px;
+}
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+      width: 100%;
+      margin: auto;
+}
+.list-img img{
+	width: 100px;
+	height: : 100px;
+}
+#grid1,#grid2,#grid3,#grid4,#grid5,#grid6,#grid7,#grid8,#grid9 {
+	color: #fff;
+}
+#grid1 {
+	background-image: url('/img/grid1.jpg');
+	background-position: center center;
+}
+#grid2 {
+	background-image: url('/img/grid2.jpg');
+	background-position: center center;
+}
+#grid3 {
+	background-image: url('/img/grid3.jpg');
+	background-position: center center;
+}
+#grid4 {
+	background-image: url('/img/grid4.jpg');
+	background-position: center center;
+}
+#grid5 {
+	background-image: url('/img/grid5.jpg');
+	background-position: center center;
+}
+#grid6 {
+	background-image: url('/img/grid6.jpg');
+	background-position: center center;
+}
+#grid7 {
+	background-image: url('/img/grid7.jpg');
+	background-position: center center;
+}
+#grid8 {
+	background-image: url('/img/grid8.jpg');
+	background-position: center center;
+}
+#grid9 {
+	background-image: url('/img/grid9.jpg');
+	background-position: center center;
+}
+.list .row {
+	margin: 50px;
+	padding: 20px;
+}
+.weather-app {
+	background: blueviolet;
+    color: aquamarine;
+    font-weight: bold;
+}
+.the-legend {
+    border-style: none;
+    border-width: 0;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 0;
+}
+.the-fieldset {
+    border: 2px groove threedface #444;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 0px 0px #000;
+}
+.fieldset {
+	padding: 90px;
+    margin: 25px;
+}
+.container-fluid {
+	margin-bottom: 90px;
+}
+.city {
+	background: aquamarine !important;
+    color: darkgreen !important;
+    font-weight: bold;
+}
+.date {
+	background: cornsilk !important;
+}

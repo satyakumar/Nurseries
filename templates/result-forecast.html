@@ -1,0 +1,29 @@
+<h4>
+	<a ng-click="getTemparature({t:2})" ng-class="{'disabled city' : activeClassDays === '2'}" class="btn btn-info">2 days</a>
+	 | 
+	 <a ng-click="getTemparature({t:3})" ng-class="{'disabled city' : activeClassDays === '3'}" class="btn btn-info">3 days</a> 
+	 | 
+	 <a ng-click="getTemparature({t:5})" ng-class="{'disabled city'  : activeClassDays === '5'}" class="btn btn-info">5 days</a>
+</h4>
+<div class="bs-example" ng-repeat="item in result.list">
+    <div class="panel panel-default">
+		<!-- Default panel contents -->
+		<div class="panel-heading text-center city">{{result.city.name}}</div>
+		<div class="panel-body date"><span class="pull-left">On</span><span class="pull-right">{{getDateFormat({date:item.dt}) | date: getDateFormatText }}</span></div>
+		<!-- List group -->
+		<div class="list-group">
+			<a class="list-group-item">Morning <span class="badge">{{getTempFormat({temp:item.temp.morn})}} &deg;C</span>
+			</a>
+			<a class="list-group-item">Day<span class="badge">{{getTempFormat({temp:item.temp.day})}} &deg;C</span>
+			</a>
+			<a class="list-group-item">Evening <span class="badge">{{getTempFormat({temp:item.temp.eve})}} &deg;C</span>
+			</a>  
+			<a class="list-group-item">Night<span class="badge">{{getTempFormat({temp:item.temp.night})}} &deg;C</span>
+			</a>
+			<a class="list-group-item">Maximum <span class="badge">{{getTempFormat({temp:item.temp.max})}} &deg;C</span>
+			</a>
+			<a class="list-group-item">Minimum <span class="badge">{{getTempFormat({temp:item.temp.min})}} &deg;C</span>
+			</a>
+		</div>
+	</div>
+</div>

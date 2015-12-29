@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nurseries</title>
+<!-- Angular JS -->
+  <script data-require="angular.js@1.4.0-rc.2" data-semver="1.4.0-rc.2" src="https://code.angularjs.org/1.4.0-rc.2/angular.js"></script>
+  
+  <!-- Angular JS Route-->
+  <script data-require="angular-route@1.4.0-rc.2" data-semver="1.4.0-rc.2" src="https://code.angularjs.org/1.4.0-rc.2/angular-route.js"></script>	
+    <script src="https://code.angularjs.org/1.4.0-rc.2/angular-resource.min.js"></script>
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/ngDialog.min.js"></script>
+    <script type="text/javascript" src="js/mdb.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+  
+  <!-- Material Design Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/ngDialog.min.css" rel="stylesheet">
+
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.css" rel="stylesheet">
+
+  <!-- Template style -->
+  <link href="css/style.css" rel="stylesheet">
+ </head>
+
+<body ng-app = "myNews">
+  <!-- Navigation -->
+  <nav class="navbar z-depth-2 info-color">
+    <div class="container ">
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#/" class="waves-effect waves-light">Home <span class="sr-only">(current)</span></a>
+          </li>
+        <ul class="nav navbar-nav">
+          <li><a href="#/gallery" class="waves-effect waves-light">Gallery <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="dropdown">
+            <a class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" role="button" aria-expanded="false">List (products) <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li  class=""><a href="#/aquatic">Aquatic plants</a></li>
+                        <li ><a href="#/avenue" >Avenue Varieties</a></li>
+                        <li ><a href="#/bamboo" >Bamboo's</a></li>
+                        <li ><a href="#/desert" >Desert Plants</a></li>
+                        <li ><a href="#/ficus" >Ficus Varieties</a></li>
+                        <li ><a href="#/flowers" >Flowering Plants</a></li>
+                       <li ><a href="#/fruit" >Fruit Plants</a></li>
+                        <li ><a href="#/indoor" >Indoor Plants</a></li>
+                       <li ><a href="#/outdoor" >Outdoor Plants</a></li>
+                       <li ><a href="#/ornamental" >Ornamental Plants</a></li>
+                      <li ><a href="#/palms" >Palm Varieties</a></li>
+            </ul>
+          </li>
+        </ul>
+        </ul>
+        <ul class="pull-right nav navbar-nav weather-app">
+          <li>
+            <a href="#/weather" class="waves-effect waves-light">Weather App</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container" ng-view>
+
+   
+
+  </div>
+  <!-- /.container -->
+
+
+
+
+  <!-- Footer -->
+  <footer class="page-footer info-color darken-1" if="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-md-offset-1">
+          <p class="white-text center-on-small-only">GET STARTED</p>
+          <p class="white-text center-on-small-only">Register for free and start to create amazing things.</p>
+          <a href="" class="btn btn-danger waves-effect waves-light">Get started!</a>
+
+        </div>
+        <hr class="hidden-lg hidden-md">
+
+        <div class="col-md-2">
+          <p class="white-text center-on-small-only">USEFUL LINKS</p>
+          <ul>
+            <li><a href="#" data-toggle="modal" data-target="#myModal" class="grey-text text-lighten-3" href="#!">Contact us</a>
+            </li>
+            <li><a class="grey-text text-lighten-3" href="#" target="_blank">About MDB</a>
+            </li>
+            <li><a class="grey-text text-lighten-3" href="#" target="_blank">Support</a>
+            </li>
+            <li><a class="grey-text text-lighten-3" href="#" target="_blank">Bug report</a>
+            </li>
+
+
+          </ul>
+        </div>
+        <hr class="hidden-lg hidden-md">
+
+        <div class="col-md-3 text-center">
+          <p class="white-text text-center"> SOCIAL MEDIA</p>
+          <a target="_blank" href="https://www.facebook.com/mdbootstrap" class="btn-floating btn-large fb-bg waves-effect waves-light"><i class="fa fa-facebook"> </i></a>
+          <a target="_blank" href="https://twitter.com/MDBootstrap" class="btn-floating btn-large tw-bg waves-effect waves-light"><i class="fa fa-twitter"> </i></a>
+          <a target="_blank" href="https://plus.google.com/u/0/b/107863090883699620484/107863090883699620484/posts" class="btn-floating btn-large gplus-bg waves-effect waves-light"><i class="fa fa-google-plus"> </i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        <div class="col-md-10 col-md-offset-1"> © 2015 Copyright <a href="#">MDBootstrap.com </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
