@@ -1,4 +1,4 @@
-var myNews = angular.module('myNews', ['ngRoute', 'ngResource','ngDialog']);
+var myNews = angular.module('myNews', ['ngRoute', 'ngResource','ngCookies']);
 myNews.config(function ($routeProvider) {
     $routeProvider
             .when('/', {
@@ -10,7 +10,7 @@ myNews.config(function ($routeProvider) {
             })
             .when('/aquatic',{
                 templateUrl: 'templates/aquatic.html',
-                controller: 'productsCtrl',
+                //controller: 'productsCtrl',
             })
             .when('/avenue',{
                 templateUrl: 'templates/avenue.html',
@@ -46,21 +46,11 @@ myNews.config(function ($routeProvider) {
                 templateUrl: 'templates/weather.html',
                 controller: 'weatherCtrl'
             })
+            .when('/cart',{
+                templateUrl: 'templates/cart.html',
+                controller: 'cartCtrl',
+            })
 });
-// Example of how to set default values for all dialogs
-        myNews.config(['ngDialogProvider', function (ngDialogProvider) {
-            ngDialogProvider.setDefaults({
-                className: 'ngdialog-theme-default',
-                plain: false,
-                showClose: true,
-                closeByDocument: true,
-                closeByEscape: true,
-                appendTo: false,
-                preCloseCallback: function () {
-                    console.log('default pre-close callback');
-                }
-            });
-        }]);
 myNews.controller('weatherCtrl', ['$scope', '$resource','$routeParams', function ($scope, $resource,$routeParams) {
     $scope.getTemp = function(days) {
         $scope.weatherAPI = $resource("http://api.openweathermap.org/data/2.5/forecast/daily", {
@@ -87,15 +77,22 @@ myNews.controller('weatherCtrl', ['$scope', '$resource','$routeParams', function
             return (k - 273.15).toFixed(0); // Kelvin to Celsius
         };
     }]);
-myNews.controller('productsCtrl',['$scope','ngDialog',function($scope,ngDialog){
-      $scope.openTimed = function (img) {
-                var dialog = ngDialog.open({
-                    template: '<img src="'+img+'">',
-                    plain: true,
-                    closeByDocument: false,
-                    closeByEscape: false
-                });
-            };
+/*myNews.controller('productsCtrl',['$scope',function($scope) { console.log('^^^^^')
+
+    $('#images').mouseenter(function() {
+        console.log($(this));
+        $(this).find('img').css({"width":"300px","height":"300px"});
+    })
+    $('#images').mouseleave(function() {
+        console.log($(this));
+        $(this).find('img').css({"width":"150px","height":"150px"});
+    })
+    $scope.cart = function(imgUrl) { alert('Ha');
+        console.log(imgUrl)
+    }
+}]);*/
+myNews.controller('cartCtrl',['$scope','$cookieStore',function($scope,$cookieStore) {
+    console.log($cookieStore.get('cart'));
 }]);
 myNews.directive('weatherForm',function() {
     return {
@@ -119,6 +116,24 @@ myNews.directive('resultForecast',function() {
         }
     }
 });
+myNews.directive('imageGrid',function() {
+    return {
+        restrict: 'E',
+        replace: false,
+        templateUrl: 'templates/image-grid.html',
+        scope: {
+            image: '@',
+            text: '@',
+        },
+        controller: function($scope,$element,$cookieStore) {
+            $scope.cart = function(imgName,imgUrl) { alert(imgName)
+                $cookieStore.put("cart", {
+                    imgName: imgUrl
+                });
+            }
+        }
+    }
+});
 /****Follow scroll*****/
     /* $( document ).ready(function() {
         var element = $('#scrollform');
@@ -139,3 +154,9 @@ myNews.directive('resultForecast',function() {
         });
     });*/
 /****Follow scroll*****/
+$( document ).ready(function() {
+    console.log('Hai');
+    $('#images').mouseenter(function() {
+        console.log($(this));
+    })
+});
