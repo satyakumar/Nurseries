@@ -92,7 +92,19 @@ myNews.controller('weatherCtrl', ['$scope', '$resource','$routeParams', function
     }
 }]);*/
 myNews.controller('cartCtrl',['$scope','$cookieStore',function($scope,$cookieStore) {
-    console.log($cookieStore.get('cart'));
+    //console.log($cookieStore.get('cart'));
+    var cartVal = JSON.parse($cookieStore.get('cart'));
+    $scope.cart = cartVal;
+    $scope.cartCount = (cartVal.length) * 100;
+    console.log(cartVal)
+    $scope.remove = function(i) {
+        //delete cartVal[i];
+        cartVal.splice( i, 1 );
+        $scope.cart = cartVal;
+        //console.log(cartVal);
+        $scope.cartCount = $scope.cartCount - 100;
+        $cookieStore.put("cart", JSON.stringify(cartVal));
+    }
 }]);
 myNews.directive('weatherForm',function() {
     return {
@@ -126,10 +138,18 @@ myNews.directive('imageGrid',function() {
             text: '@',
         },
         controller: function($scope,$element,$cookieStore) {
-            $scope.cart = function(imgName,imgUrl) { alert(imgName)
-                $cookieStore.put("cart", {
-                    imgName: imgUrl
-                });
+            var cartList = [];
+            $scope.cart = function(imgName,imgUrl) { 
+                var selecteditem = {
+                    itemName: imgName,
+                    itemValue: imgUrl
+                };
+                var getCartList = $cookieStore.get("cart");
+                if(getCartList) {
+                    cartList = JSON.parse(getCartList);
+                } 
+                cartList.push(selecteditem);
+                $cookieStore.put("cart", JSON.stringify(cartList));
             }
         }
     }

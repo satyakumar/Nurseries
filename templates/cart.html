@@ -1,1 +1,17 @@
-cart
+<h3>Selected items</h3>
+<h4>Total cart value: {{cartCount}}</h4>
+<div ng-repeat="cartValue in cart">
+	 <div class="col-md-4" >
+        <div class="card hoverable">
+          <div class="card-image">
+            <img src="{{cartValue.itemValue}}" />
+          </div>
+          <div class="card-content">
+            <p>{{cartValue.itemName}}</p>
+          </div>
+          <div class="card-action">
+              <button type="button" class="btn btn-warning waves-effect waves-light" ng-click="remove($index)">Remove</button>
+          </div>
+        </div>
+      </div>
+</div>

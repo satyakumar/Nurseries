@@ -119,3 +119,8 @@ font-size: 15px;
 .date {
 	background: cornsilk !important;
 }
+.rupee {
+	position: relative;
+    top: 4px;
+    right: 3px;
+}
