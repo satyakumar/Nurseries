@@ -95,7 +95,8 @@ myNews.controller('cartCtrl',['$scope','$cookieStore',function($scope,$cookieSto
     //console.log($cookieStore.get('cart'));
     var cartVal = JSON.parse($cookieStore.get('cart'));
     $scope.cart = cartVal;
-    $scope.cartCount = (cartVal.length) * 100;
+    var cartCount = (cartVal.length) * 100;
+    $scope.quantity = 1;
     console.log(cartVal)
     $scope.remove = function(i) {
         //delete cartVal[i];
@@ -105,6 +106,7 @@ myNews.controller('cartCtrl',['$scope','$cookieStore',function($scope,$cookieSto
         $scope.cartCount = $scope.cartCount - 100;
         $cookieStore.put("cart", JSON.stringify(cartVal));
     }
+    $scope.cartCount = cartCount || 0;
 }]);
 myNews.directive('weatherForm',function() {
     return {
@@ -139,6 +141,7 @@ myNews.directive('imageGrid',function() {
         },
         controller: function($scope,$element,$cookieStore) {
             var cartList = [];
+            $scope.buy = false;
             $scope.cart = function(imgName,imgUrl) { 
                 var selecteditem = {
                     itemName: imgName,
@@ -150,6 +153,7 @@ myNews.directive('imageGrid',function() {
                 } 
                 cartList.push(selecteditem);
                 $cookieStore.put("cart", JSON.stringify(cartList));
+                $scope.buy = true;
             }
         }
     }

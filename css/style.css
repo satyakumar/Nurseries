@@ -124,3 +124,16 @@ font-size: 15px;
     top: 4px;
     right: 3px;
 }
+.inc-dec {
+	font-size: 25px;
+    color: orchid;
+}
+.glyphicon.btn {
+	background: cornsilk;
+    font-weight: bold;
+    font-size: 21px;
+}
+.inc-dec input {
+	width: 38px;
+    background: beige;
+}
