@@ -137,3 +137,9 @@ font-size: 15px;
 	width: 38px;
     background: beige;
 }
+.card img {
+	max-height: 250px;
+}
+.navbar-nav {
+	font-weight: bold;
+}
