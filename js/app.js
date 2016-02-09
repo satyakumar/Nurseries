@@ -49,7 +49,7 @@ myNews.config(function ($routeProvider) {
             .when('/cart',{
                 templateUrl: 'templates/cart.html',
                 controller: 'cartCtrl',
-            })
+            });
 });
 myNews.controller('weatherCtrl', ['$scope', '$resource','$routeParams', function ($scope, $resource,$routeParams) {
     $scope.getTemp = function(days) {
