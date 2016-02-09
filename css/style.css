@@ -143,3 +143,6 @@ font-size: 15px;
 .navbar-nav {
 	font-weight: bold;
 }
+.card-title {
+	color: #202020 !important;
+}

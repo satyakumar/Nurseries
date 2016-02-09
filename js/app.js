@@ -1,4 +1,4 @@
-var myNews = angular.module('myNews', ['ngRoute', 'ngResource','ngCookies']);
+var myNews = angular.module('myNews', ['ngRoute','ngCookies','ngResource']);
 myNews.config(function ($routeProvider) {
     $routeProvider
             .when('/', {

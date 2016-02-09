@@ -2808,9 +2808,9 @@ th {
 /*********************
   General classes
 **********************/
-body {
+/*body {
   font-family: Roboto, sans-serif;
-}
+}*/
 
 span.badge-md {
   min-width: 3rem;
