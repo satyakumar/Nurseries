@@ -1,5 +1,6 @@
 var myNews = angular.module('myNews', ['ngRoute','ngCookies','ngResource']);
-myNews.config(function ($routeProvider) {
+myNews.config(function ($routeProvider,$locationProvider) {
+	$locationProvider.html5Mode(true);
     $routeProvider
             .when('/', {
                 templateUrl: 'templates/home.html',
